@@ -1,0 +1,42 @@
+= Migrate Wordpress 4 to Drupal 7 =
+
+This cookbook migrates data from a Wordpress database into a Drupal database.
+
+== Which data will be migrated? ==
+
+The cookbook maps the following data between the two systems:
+
+* users
+* articles, pages
+* comments
+* tags
+* categories
+
+== Tested versions ==
+
+This cookbook was tested with the following versions.
+
+*Wordpress*
+
+* 4.2.2
+* 4.3
+
+*Drupal*
+
+* 7.38
+* 7.39
+
+== Adapt the cookbook ==
+
+You can adapt specific settings of the cookbook. These settings should be
+managed by using the Mapping Editor of the Tensei-Data frontend.
+
+== After the migration ==
+
+Create a new `node`, `comment` and `user`! You will get an error. After this error
+message, the internal counting variables are synchronized.
+
+The passwords of the users are not migrated to the Drupal system. If you want to
+still have the admin password, you should save the content of the `pass` field
+from the `user` table of the Drupal database. You can store the password string
+after the migration into the same field.
