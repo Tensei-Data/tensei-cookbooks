@@ -36,7 +36,7 @@ managed by using the Mapping Editor of the Tensei-Data frontend.
 Some `tables` of the Wordpress database must be empty to avoid key errors during
 the migration process.
 
-[source, bash]
+[source, sql]
 ----
 TRUNCATE comment;
 TRUNCATE field_data_body;

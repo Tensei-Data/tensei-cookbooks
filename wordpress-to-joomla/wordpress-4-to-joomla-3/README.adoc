@@ -35,7 +35,7 @@ link:http://www.joomlatune.com/jcomments-downloads.html[JComments] plugin.
 Some `tables` of the Joomla database must be empty to avoid key errors during
 the migration process.
 
-[source, bash]
+[source, sql]
 ----
 TRUNCATE joomla_content;
 ALTER TABLE joomla_content AUTO_INCREMENT = 1;
