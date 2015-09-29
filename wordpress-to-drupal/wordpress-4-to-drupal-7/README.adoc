@@ -31,6 +31,28 @@ This cookbook was tested with the following versions.
 You can adapt specific settings of the cookbook. These settings should be
 managed by using the Mapping Editor of the Tensei-Data frontend.
 
+== Before the migration ==
+
+Some `tables` of the Wordpress database must be empty to avoid key errors during
+the migration process.
+
+[source, bash]
+----
+TRUNCATE comment;
+TRUNCATE field_data_body;
+TRUNCATE node;
+TRUNCATE users;
+TRUNCATE field_data_comment_body;
+TRUNCATE node_revision;
+TRUNCATE node_comment_statistics;
+TRUNCATE taxonomy_vocabulary;
+TRUNCATE taxonomy_term_data;
+TRUNCATE taxonomy_index;
+TRUNCATE taxonomy_term_hierarchy;
+TRUNCATE field_data_field_tags;
+TRUNCATE field_revision_field_tags;
+----
+
 == After the migration ==
 
 Create a new `node`, `comment` and `user`! You will get an error. After this error
