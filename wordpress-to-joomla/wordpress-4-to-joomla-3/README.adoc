@@ -1,0 +1,58 @@
+= Migrate Wordpress 4 to Joomla 3 =
+This cookbook migrates data from a Wordpress database into a Joomla database.
+
+== Which data will be migrated? ==
+
+The cookbook maps the following data between the two systems:
+
+* users
+* articles, pages
+* comments
+
+== Tested versions ==
+
+This cookbook was tested with the following versions.
+
+*Wordpress*
+
+* 4.2.2
+* 4.3
+
+*Joomla*
+
+* 3.4.3
+
+== Adapt the cookbook ==
+
+You can adapt specific settings of the cookbook. These settings should be
+managed by using the Mapping Editor of the Tensei-Data frontend.
+
+== Before the migration ==
+
+If the `comments` should be migrated, you must install the
+link:http://www.joomlatune.com/jcomments-downloads.html[JComments] plugin.
+
+Some `tables` of the Joomla database must be empty to avoid key errors during
+the migration process.
+
+[source, bash]
+----
+TRUNCATE joomla_content;
+ALTER TABLE joomla_content AUTO_INCREMENT = 1;
+TRUNCATE joomla_users;
+ALTER TABLE joomla_users AUTO_INCREMENT = 1;
+TRUNCATE joomla_jcomments;
+ALTER TABLE joomla_jcomments AUTO_INCREMENT = 1;
+----
+
+== After the migration ==
+
+The passwords of the users are not migrated to the Joomla system.
+
+To avoid the 'unpublish' of articles at the `31.12.2099 at 23:59:59`, you must
+set the `publish_down` column to `0000-00-00 00:00:00`.
+
+[source, sql]
+----
+UPDATE joomla_content SET publish_down = "0000-00-00 00:00:00";
+----

@@ -1,0 +1,7 @@
+= Migration from Wordpress to Joomla =
+
+These cookbooks allow the migration of your data from a Wordpress CMS to a
+Joomla CMS.
+
+Depending on your version, you must select the cookbook that was created for
+the specific versions of the two CMS systems.
