@@ -1,0 +1,16 @@
+= Migration from an Email into a CSV file =
+
+This cookbook allows the migration from specific fields from an Email into a
+CSV file.
+
+== What is migrated? ==
+
+Currently the following Email information is migrated into separate columns
+of a CSV file:
+
+* from
+* to
+* subject
+* date
+* body
+
