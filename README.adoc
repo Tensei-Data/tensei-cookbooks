@@ -1,0 +1,22 @@
+= A collection of Tensei-Data cookbooks =
+
+These cookbooks can be imported to the Tensei-Data migration system for various
+data migration tasks.
+
+== Usage ==
+
+Simply select the cookbook of your choice and follow the instructions from the
+README within the folder.
+
+== DFASDL ==
+
+A part of the cookbooks are the DFASDLs (Data Format and Sematic Description
+Language). Additional DFASDLs are also available in this
+link:https://github.com/DFASDL/dfasdls[Github repository].
+
+== Tensei-Data ==
+
+Tensei-Data is a data migration software. The
+link:http://www.tensei-data.com[official website] contains
+additional information and
+link:http://www.tensei-data.com/en/screenshots[screenshots].
