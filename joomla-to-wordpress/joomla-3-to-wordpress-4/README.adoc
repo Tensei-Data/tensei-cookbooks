@@ -1,0 +1,47 @@
+= Migrate Joomla 3 to Wordpress 4 =
+This cookbook migrates data from a Joomla database into a Wordpress database.
+
+== Which data will be migrated? ==
+
+The cookbook maps the following data between the two systems:
+
+* users
+* articles, pages
+* comments
+
+== Tested versions ==
+
+This cookbook was tested with the following versions.
+
+*Joomla*
+
+* 3.4.3
+
+*Wordpress*
+
+* 4.2.2
+* 4.3
+
+== Adapt the cookbook ==
+
+You can adapt specific settings of the cookbook. These settings should be
+managed by using the Mapping Editor of the Tensei-Data frontend.
+
+== Before the migration ==
+
+Some `tables` of the Wordpress database must be empty to avoid key errors during
+the migration process.
+
+[source, sql]
+----
+TRUNCATE wp_users;
+ALTER TABLE wp_users AUTO_INCREMENT = 1;
+TRUNCATE wp_comments;
+ALTER TABLE wp_comments AUTO_INCREMENT = 1;
+TRUNCATE wp_posts;
+ALTER TABLE wp_posts AUTO_INCREMENT = 1;
+----
+
+== After the migration ==
+
+The passwords of the users are not migrated to the Wordpress system.
